@@ -1,34 +1,55 @@
 # Google Sheets Telegram Notifier
 
-This Google Apps Script project sends automated notifications to a Telegram chat whenever a specific cell in a Google Sheets spreadsheet is edited. It includes customizable messages and error handling, making it ideal for real-time updates and tracking changes in your spreadsheet.
+This Google Apps Script project sends automated notifications to a Telegram chat whenever a specific cell in a Google Sheets spreadsheet is edited. It includes customizable messages and error handling. Ideal for real-time updates and tracking changes in your spreadsheet.
 
 ## Features
+- Real-time notifications to Telegram
+- Customizable messages
+- Error handling
 
-- **Automated Notifications**: Sends a message to a specified Telegram chat whenever a specific column in the Google Sheets is updated to a specified value.
-- **Customizable Messages**: Allows for customization of the notification message, including the title and the inclusion of specific form response data.
-- **Hidden Questions**: Excludes sensitive or unnecessary information from the notification, such as personal contact details and specific hidden questions.
-- **Error Handling**: Includes error handling for missing settings, missing columns, and Telegram API errors.
+## Installation
 
-## Setup Instructions
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/bhqmuhammad/google-sheets-telegram-notifier.git
+    cd google-sheets-telegram-notifier
+    ```
 
-1. **Create a Telegram Bot**:
-   - Create a new bot using [BotFather](https://core.telegram.org/bots#botfather) on Telegram and obtain the bot API token.
-   - Ensure that the bot has been started by the intended recipients to receive messages.
+2. **Set up Google Apps Script:**
+    - Open Google Sheets and go to `Extensions` > `Apps Script`.
+    - Copy the code from the repository's `main.gs` file and paste it into the Apps Script editor.
+    - Save the project.
 
-2. **Set Up the Google Sheets**:
-   - Create a Google Sheets document with the necessary columns, including the column to watch for changes and "ID Telegram".
-   - Add a new sheet named `Telegram Bot Settings` and fill in the following settings:
-     - `B5`: Bot API Token
-     - `B9`: Form Responses Sheet Name
-     - `B11`: Custom Title for the notifications
-     - `B13`: Column name to watch for changes (e.g., "Status Input")
-     - `B15`: Value that triggers the notification (e.g., "Sudah Input")
+3. **Configure Telegram Bot:**
+    - Create a Telegram bot using [BotFather](https://core.telegram.org/bots#botfather) and obtain the API token.
+    - Set the chat ID where you want to receive notifications.
 
-3. **Deploy the Google Apps Script**:
-   - Open the Script Editor from the Google Sheets and paste the provided script.
-   - Save and authorize the script to access the necessary services.
-   - Set up a trigger to run the `sendTelegramNotification` function on edit.
+4. **Environment Variables:**
+    - Use the `PropertiesService` in Google Apps Script to store sensitive information like the API token and chat ID securely.
 
-## Example Use Case
+5. **Set up Triggers:**
+    - In the Apps Script editor, go to `Triggers` > `Add Trigger`.
+    - Set up a trigger to run the `notifyTelegram` function on `Edit`.
 
-- **Sales Order Tracking**: Monitor the status of sales orders and notify sales agents via Telegram when their orders have been inputted into the system, providing real-time updates and ensuring prompt follow-up.
+## Usage
+
+- Edit the specific cell in the Google Sheets spreadsheet to trigger notifications.
+- Customize the notification message in the `notifyTelegram` function.
+
+## Contributing
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -am 'Add new feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a new Pull Request.
+
+## Troubleshooting
+
+- Ensure the Google Apps Script project has necessary permissions.
+- Check the Telegram bot token and chat ID are correctly configured.
+- Review error messages in the Apps Script editor's logs.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
