@@ -109,7 +109,7 @@ Thumbs.db
 
 # Google Apps Script
 .clasp.json
-appsscript.json
+# appsscript.json - keeping this in repo as template
 
 # Backup files
 *.backup
