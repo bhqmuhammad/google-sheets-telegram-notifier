@@ -1,0 +1,37 @@
+{
+  "name": "google-sheets-telegram-notifier",
+  "version": "1.0.0",
+  "description": "Google Apps Script that sends automated notifications to Telegram when Google Sheets cells are edited",
+  "main": "main.gs",
+  "scripts": {
+    "deploy": "clasp push",
+    "upload": "clasp push",
+    "setup": "clasp create --type standalone",
+    "open": "clasp open"
+  },
+  "keywords": [
+    "google-apps-script",
+    "telegram",
+    "google-sheets",
+    "notifications",
+    "automation",
+    "bot"
+  ],
+  "author": "bhqmuhammad",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bhqmuhammad/google-sheets-telegram-notifier.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bhqmuhammad/google-sheets-telegram-notifier/issues"
+  },
+  "homepage": "https://github.com/bhqmuhammad/google-sheets-telegram-notifier#readme",
+  "devDependencies": {
+    "@google/clasp": "^2.4.2",
+    "@types/google-apps-script": "^1.0.83"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
